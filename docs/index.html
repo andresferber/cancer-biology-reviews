@@ -29,15 +29,20 @@ details.gloss dd{margin:0;color:var(--muted)}
 details.how ol{margin:0;padding:0 14px 12px 34px;font-size:13.5px}
 details.how li{margin:3px 0}
 @media (max-width:560px){details.gloss dl{grid-template-columns:1fr}details.gloss dd{margin-bottom:4px}}
-details.theme{background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:10px}
-details.theme>summary{cursor:pointer;padding:12px 14px;font-weight:600;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:8px}
+details.theme{background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:14px;overflow:hidden}
+details.theme>summary{cursor:pointer;padding:14px 16px;font-weight:700;font-size:19px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--accent);color:var(--onaccent)}
 details.theme>summary::-webkit-details-marker{display:none}
-details.theme>summary .cnt{font-weight:400;font-size:12px;color:var(--muted)}
-.tbody{padding:0 14px 12px}
-.tblurb{color:var(--muted);font-size:13px;margin:0 0 10px}
-.topic{border-top:1px solid var(--line);padding:12px 0}
-.thead{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.thead h3{margin:0;font-size:15px}
+details.theme>summary .cnt{font-weight:400;font-size:12.5px;opacity:.85;white-space:nowrap}
+.sn::before{content:'\25B8';display:inline-block;width:1.1em;transition:transform .15s}
+details[open]>summary>.sn::before{transform:rotate(90deg)}
+.tbody{padding:12px 14px 6px}
+.tblurb{color:var(--muted);font-size:13px;margin:0 0 6px}
+details.topic{border:1px solid var(--line);border-radius:8px;margin:8px 0;background:var(--card);overflow:hidden}
+details.topic>summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 12px;background:var(--chip)}
+details.topic>summary::-webkit-details-marker{display:none}
+details.topic>summary .tn{font-weight:600;font-size:16px;flex:1 1 220px;min-width:0;overflow-wrap:anywhere}
+details.topic>summary .tc{font-size:12px;color:var(--muted);white-space:nowrap}
+.tin{padding:10px 12px 12px}
 .tag{font-size:11px;padding:1px 8px;border-radius:999px;border:1px solid currentColor}
 .tag.heme{color:var(--heme)}.tag.solid{color:var(--solid)}.tag.both{color:var(--both)}
 .why{margin:4px 0 8px;font-size:14px}
@@ -134,10 +139,10 @@ function revHtml(p,kind,open,tname){
  var body=(r.abs.length||r.con)?'<details class="sum"'+(open?' open':'')+'><summary>'+(r.abs.length?'Abstract and conclusion':'Abstract')+'</summary><div class="g">'+absHtml(r)+'</div></details>':'';
  return '<div class="'+cls+'"><div class="rh">'+badge+'<span class="t"><a href="'+pm(p)+'" target="_blank" rel="noopener">'+esc(r.title)+'</a></span>'+star+'</div><div class="m">'+esc(cite(r))+'</div>'+body+'<div class="lk">'+lk+'</div></div>';
 }
-function topicHtml(t,first){
- var open=allOpen===null?first:allOpen;
+function topicHtml(t){
+ var open=allOpen===true;
  var n=t.pinned.length+t.recent.length;
- var h='<div class="topic" id="t-'+esc(t.id)+'"><div class="thead"><h3>'+esc(t.name)+'</h3><span class="tag '+esc(t.scope)+'">'+scopeLabel[t.scope]+'</span></div>';
+ var h='<details class="topic" id="t-'+esc(t.id)+'"'+(open?' open':'')+'><summary><span class="tn sn">'+esc(t.name)+'</span><span class="tag '+esc(t.scope)+'">'+scopeLabel[t.scope]+'</span><span class="tc">'+n+(n===1?' review':' reviews')+'</span></summary><div class="tin">';
  h+='<div class="plain"><b>Mechanism in brief</b>'+esc(t.plain)+'</div>';
  h+='<p class="why"><b>Why it matters:</b> '+esc(t.why)+'</p><p class="hook"><b>Clinical hook'+(t.hook_draft?' (draft)':'')+':</b> '+esc(t.hook)+'</p>';
  t.pinned.forEach(function(p){h+=revHtml(p,'pinned',open,t.name)});
@@ -147,7 +152,7 @@ function topicHtml(t,first){
  if(t.retired.length)h+='<span>Retired: '+t.retired.length+' <button data-a="ret" data-t="'+esc(t.id)+'">Restore</button></span>';
  h+='</div>';
  if(t.retired.length){h+='<div class="retlist" id="ret-'+esc(t.id)+'" hidden>';t.retired.forEach(function(p){h+=revHtml(p,'retired',false,t.name)});h+='</div>'}
- h+='<div class="watch">To watch: '+t.watch.map(function(w){return '<span>'+esc(w)+'</span>'}).join('')+'</div></div>';
+ h+='<div class="watch">To watch: '+t.watch.map(function(w){return '<span>'+esc(w)+'</span>'}).join('')+'</div></div></details>';
  return h;
 }
 function inFilter(t){return filter==='all'||(filter==='heme'&&(t.scope==='heme'||t.scope==='both'))||(filter==='solid'&&(t.scope==='solid'||t.scope==='both'))}
@@ -172,11 +177,11 @@ function render(){
  D.themes.forEach(function(th){
   var vis=th.topics.filter(inFilter);if(!vis.length)return;
   var live=vis.filter(function(t){return !t.dormant}),dorm=vis.filter(function(t){return t.dormant});
-  out+='<details class="theme" open><summary><span>'+esc(th.name)+'</span><span class="cnt">'+vis.length+' topics</span></summary><div class="tbody"><p class="tblurb">'+esc(th.blurb)+'</p>';
-  live.forEach(function(t,i){out+=topicHtml(t,i===0)});
+  out+='<details class="theme" open><summary><span class="sn">'+esc(th.name)+'</span><span class="cnt">'+vis.length+(vis.length===1?' topic':' topics')+'</span></summary><div class="tbody"><p class="tblurb">'+esc(th.blurb)+'</p>';
+  live.forEach(function(t){out+=topicHtml(t)});
   if(dorm.length){
    out+='<details class="dormant"><summary>Dormant ('+dorm.length+'): nothing new in 12 months</summary>';
-   dorm.forEach(function(t){out+=topicHtml(t,false)});
+   dorm.forEach(function(t){out+=topicHtml(t)});
    out+='</details>';
   }
   out+='</div></details>';
@@ -186,15 +191,15 @@ function render(){
 function drawFilters(){
  var fl=[['all','All'],['heme','Hematologic'],['solid','Solid-tumor fundamentals'],['saved','★ Saved ('+Object.keys(stars).length+')']];
  var h='';fl.forEach(function(f){h+='<button data-f="'+f[0]+'" class="'+(f[0]===filter?'on':'')+'">'+f[1]+'</button>'});
- h+='<button class="sp" id="sumtoggle">'+(allOpen===true?'Collapse abstracts':'Expand abstracts')+'</button>';
+ h+='<button class="sp" id="sumtoggle">'+(allOpen===true?'Collapse all':'Expand all')+'</button>';
  document.getElementById('filters').innerHTML=h;
 }
 document.getElementById('filters').addEventListener('click',function(e){
  var b=e.target.closest('button');if(!b)return;
  if(b.id==='sumtoggle'){
   allOpen=allOpen!==true;
-  Array.prototype.forEach.call(document.querySelectorAll('details.sum'),function(d){d.open=allOpen});
-  b.textContent=allOpen?'Collapse abstracts':'Expand abstracts';
+  Array.prototype.forEach.call(document.querySelectorAll('details.topic, details.sum'),function(d){d.open=allOpen});
+  b.textContent=allOpen?'Collapse all':'Expand all';
   return;
  }
  if(b.getAttribute('data-f')){filter=b.getAttribute('data-f');drawFilters();render()}
