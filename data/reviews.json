@@ -54,6 +54,33 @@
   "volume": "36",
   "year": "2022"
  },
+ "34663943": {
+  "abstract": [
+   {
+    "label": "",
+    "text": "Apoptosis is a form of programmed cell death that is regulated by the balance between prosurvival and proapoptotic BCL-2 protein family members. Evasion of apoptosis is a hallmark of cancer that arises when this balance is tipped in favour of survival. One form of anticancer therapeutic, termed 'BH3-mimetic drugs', has been developed to directly activate the apoptosis machinery in malignant cells. These drugs bind to and inhibit specific prosurvival BCL-2 family proteins, thereby mimicking their interaction with the BH3 domains of proapoptotic BCL-2 family proteins. The BCL-2-specific inhibitor venetoclax is approved by the US Food and Drug Administration and many regulatory authorities worldwide for the treatment of chronic lymphocytic leukaemia and acute myeloid leukaemia. BH3-mimetic drugs targeting other BCL-2 prosurvival proteins have been tested in preclinical models of cancer, and drugs targeting MCL-1 or BCL-XL have advanced into phase I clinical trials for certain cancers. As with all therapeutics, efficacy and tolerability need to be carefully balanced to achieve a therapeutic window whereby there is significant anticancer activity with an acceptable safety profile. In this Review, we outline the current state of BH3-mimetic drugs targeting various prosurvival BCL-2 family proteins and discuss emerging data regarding primary and acquired resistance to these agents and approaches that may overcome this. We highlight issues that need to be addressed to further advance the clinical application of BH3-mimetic drugs, both alone and in combination with additional anticancer agents (for example, standard chemotherapeutic drugs or inhibitors of oncogenic kinases), for improved responses in patients with cancer."
+   }
+  ],
+  "authors": "Diepstraten ST, Anderson MA, Czabotar PE, Lessene G, Strasser A, Kelly GL",
+  "doi": "10.1038/s41568-021-00407-4",
+  "first_author": "Diepstraten",
+  "journal": "Nat Rev Cancer",
+  "journal_full": "Nature reviews. Cancer",
+  "language": [
+   "eng"
+  ],
+  "pages": "45-64",
+  "pmid": "34663943",
+  "pubdate": "2021-10-18",
+  "pubtypes": [
+   "Journal Article",
+   "Research Support, Non-U.S. Gov't",
+   "Review"
+  ],
+  "title": "The manipulation of apoptosis for cancer therapy using BH3-mimetic drugs",
+  "volume": "22",
+  "year": "2022"
+ },
  "35338310": {
   "abstract": [
    {
@@ -192,6 +219,33 @@
   "volume": "67",
   "year": "2026"
  },
+ "41714805": {
+  "abstract": [
+   {
+    "label": "",
+    "text": "It took decades from the discovery of BCL-2, initially identified in chromosomal translocations associated with lymphoid malignancies, to understand how BCL-2 and its family members regulate apoptosis, launching a transformative journey in cancer biology often called \"the road to ruin\". Developing powerful BCL-2 inhibitors for clinical use required decades. Yet, this remains as one of the most successful achievements in a field that started ~40 years ago, as recounted by its pioneers. BCL-2 was later found to inhibit apoptosis by preventing mitochondrial outer membrane permeabilization (MOMP), a breakthrough that clarified its role in cancer pathogenesis. Such effects of BCL-2 on MOMP prevent cytochrome c release and caspase activation, while its family members-anti-apoptotic proteins (e.g. BCL-2, BCL-XL) and pro-apoptotic proteins (e.g. BAX, BAK, BH3-only proteins)-orchestrate a delicate balance in cell death regulation. MicroRNAs like miR-15/16, often deleted in chronic lymphocytic leukaemia (CLL), modulate BCL-2 expression, driving oncogenesis. Mechanistically, BAX/BAK oligomerization forms mitochondrial pores, with sublethal MOMP triggering inflammation via cGAS-STING and NF-κB pathways. Alternative MOMP inducers (e.g. BOK) and mitochondrial dynamics further refine apoptotic control. Clinically, the BCL-2 inhibitor venetoclax has revolutionized CLL and acute myeloid leukemia (AML) treatment, showing efficacy in TP53-mutant CLL and elderly AML patients when combined with CD20 antibodies or hypomethylating agents. However, resistance, driven by BCL-2 mutations (e.g. Gly101Val) or MCL-1 upregulation, poses challenges. Limited success in solid tumors underscores the complexity of BCL-2 family dependencies. Future directions include novel inhibitors targeting MCL-1 or BCL-XL, BH3 profiling for precision therapy, and combinations with immune or DNA repair modulators. Non-apoptotic roles of BCL-2 in metabolism also warrant exploration. This review highlights the clinical success of BCL-2 inhibitors, addresses resistance mechanisms, and explores future directions, including sublethal MOMP, inflammatory outcomes, and novel inhibitors. Celebrating the collaborative, interdisciplinary efforts that transformed fundamental discoveries into life-saving therapies, this account underscores both the triumphs and the \"potholes\" encountered on the path to understanding apoptosis, while identifying open questions for ongoing research."
+   }
+  ],
+  "authors": "Croce CM, Tait SWG, Garcia-Sáez AJ, et al.",
+  "doi": "10.1038/s41418-025-01607-3",
+  "first_author": "Croce",
+  "journal": "Cell Death Differ",
+  "journal_full": "Cell death and differentiation",
+  "language": [
+   "eng"
+  ],
+  "pages": "673-693",
+  "pmid": "41714805",
+  "pubdate": "2026-02-19",
+  "pubtypes": [
+   "Journal Article",
+   "Review",
+   "Research Support, Non-U.S. Gov't"
+  ],
+  "title": "What does BCL-2 do? From new molecular insights to the clinical implications",
+  "volume": "33",
+  "year": "2026"
+ },
  "41816334": {
   "abstract": [
    {
@@ -216,6 +270,32 @@
   ],
   "title": "Bone marrow microenvironment reprogramming in myelodysplastic neoplasms: from pathological mechanisms to targeted therapeutic strategies",
   "volume": "17",
+  "year": "2026"
+ },
+ "41937490": {
+  "abstract": [
+   {
+    "label": "",
+    "text": "Restoring apoptosis in malignant cells represents a central goal of anticancer therapy. Tumour cells often escape cell death by overexpressing anti-apoptotic members of the BCL-2 protein family, particularly BCL-2, BCL-xL, and MCL1. These proteins inhibit the intrinsic mitochondrial apoptotic pathway through intricate interactions with pro-apoptotic partners and direct modulation of the mitochondrial outer membrane. Their pivotal role in cell survival has established them as attractive therapeutic targets. Over the past two decades, significant efforts have been devoted to developing selective small-molecule inhibitors capable of neutralising these proteins and reactivating apoptosis. A first milestone was the discovery of ABT-263 (navitoclax), a dual BCL-2/BCL-xL inhibitor. Building on this achievement, the development of venetoclax, a highly selective BCL-2 inhibitor, marked a major breakthrough, demonstrating potent pro-apoptotic activity and clinical efficacy in several leukaemia subtypes. Despite these advances, the design of inhibitors of BCL-2 family members remains challenging, largely due to the structural characteristics of the BH3-binding groove, which is both shallow and hydrophobic, complicating the identification of molecules with optimal binding affinity and selectivity. PROTACs targeting BCL-xL may represent a promising future strategy, potentially overcoming the intrinsic limitations of small molecule inhibitors."
+   }
+  ],
+  "authors": "Cilloni D, Ferrando A, Frassoni F",
+  "doi": "10.1111/jcmm.71036",
+  "first_author": "Cilloni",
+  "journal": "J Cell Mol Med",
+  "journal_full": "Journal of cellular and molecular medicine",
+  "language": [
+   "eng"
+  ],
+  "pages": "e71036",
+  "pmid": "41937490",
+  "pubdate": "2026-04-01",
+  "pubtypes": [
+   "Journal Article",
+   "Review"
+  ],
+  "title": "Targeting BCL-xL in Myeloid Malignancies: From Inhibitors to PROTAC",
+  "volume": "30",
   "year": "2026"
  },
  "42440668": {

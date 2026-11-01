@@ -1,5 +1,22 @@
 {
  "topics": {
+  "apoptosis-bcl2": {
+   "active": [
+    "41937490",
+    "41714805"
+   ],
+   "pinned": [
+    "34663943"
+   ],
+   "pinned_spec": [
+    {
+     "author": "Diepstraten",
+     "doi": "10.1038/s41568-021-00407-4",
+     "year": "2022"
+    }
+   ],
+   "retired": []
+  },
   "autophagy": {
    "active": [
     "42922083",

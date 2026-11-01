@@ -2,6 +2,20 @@
  "date": "2026-11-01",
  "errors": {},
  "topics": {
+  "apoptosis-bcl2": {
+   "events": [
+    "ENTERED 41937490: Targeting BCL-xL in Myeloid Malignancies: From Inhibitors to PROTAC (J Cell Mol Med 2026-04)",
+    "ENTERED 41714805: What does BCL-2 do? From new molecular insights to the clinical implications (Cell Death Differ 2026-02)"
+   ],
+   "info": {
+    "qualified": 20,
+    "rejected": {
+     "excluded by editor": 3
+    },
+    "returned": 23,
+    "searched": 23
+   }
+  },
   "autophagy": {
    "events": [],
    "info": {
