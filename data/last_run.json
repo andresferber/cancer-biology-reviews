@@ -4,13 +4,13 @@
  "topics": {
   "apoptosis-bcl2": {
    "events": [
-    "ENTERED 41937490: Targeting BCL-xL in Myeloid Malignancies: From Inhibitors to PROTAC (J Cell Mol Med 2026-04)",
-    "ENTERED 41714805: What does BCL-2 do? From new molecular insights to the clinical implications (Cell Death Differ 2026-02)"
+    "ENTERED 42575085: Beyond BCL-2: What drives venetoclax resistance in acute myeloid leukemia? (Cancer Cell 2026-08)",
+    "RETIRED 41714805: What does BCL-2 do? From new molecular insights to the clinical implications (Cell Death Differ 2026-02) - displaced by a newer review"
    ],
    "info": {
-    "qualified": 20,
+    "qualified": 21,
     "rejected": {
-     "excluded by editor": 3
+     "excluded by editor": 2
     },
     "returned": 23,
     "searched": 23
