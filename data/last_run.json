@@ -1,0 +1,87 @@
+{
+ "date": "2026-11-01",
+ "errors": {},
+ "topics": {
+  "autophagy": {
+   "events": [
+    "ENTERED 42922083: Transcriptional control of autophagy: mechanisms, dynamics, and pharmacological modulation (Autophagy 2026-10)",
+    "ENTERED 42921971: A guide to autophagy-dependent cell death: concepts, criteria, and mechanisms (Autophagy 2026-10)"
+   ],
+   "info": {
+    "qualified": 76,
+    "rejected": {
+     "not a review": 1,
+     "older than window": 4
+    },
+    "returned": 81,
+    "searched": 81
+   }
+  },
+  "bm-niche-camdr": {
+   "events": [
+    "ENTERED 41816334: Bone marrow microenvironment reprogramming in myelodysplastic neoplasms: from pathological (Front Immunol 2026-02)",
+    "ENTERED 41178643: The role of the bone marrow microenvironment in disease progression and drug resistance in (Leuk Lymphoma 2025-11)"
+   ],
+   "info": {
+    "qualified": 7,
+    "rejected": {},
+    "returned": 7,
+    "searched": 7
+   }
+  },
+  "caf-ecm": {
+   "events": [
+    "ENTERED 42957652: Cancer-associated fibroblasts: origins, functional heterogeneity and therapeutic potential (Signal Transduct Target Ther 2026-10)",
+    "ENTERED 42948317: Cancer-associated fibroblasts in triple-negative breast cancer: heterogeneity, tumor-strom (Front Oncol 2026-10)"
+   ],
+   "info": {
+    "qualified": 89,
+    "rejected": {
+     "older than window": 3
+    },
+    "returned": 92,
+    "searched": 92
+   }
+  },
+  "ferroptosis": {
+   "events": [
+    "ENTERED 42942016: Lipid Metabolism and Ferroptosis in Cancer: Regulatory Mechanisms, Alternative Splicing, a (Int J Mol Sci 2026-10)",
+    "ENTERED 42953155: Ferroptosis in the tumor immune microenvironment: from danger signals to immune reprogramm (Front Immunol 2026-10)"
+   ],
+   "info": {
+    "qualified": 145,
+    "rejected": {
+     "older than window": 5
+    },
+    "returned": 150,
+    "searched": 150
+   }
+  },
+  "mito-redox": {
+   "events": [
+    "ENTERED 42909308: Mitochondrial regulation of tumor-associated macrophage function (Front Immunol 2026-10)",
+    "ENTERED 42761405: Redox-driven mitochondrial DNA stress in hepatocellular carcinoma: innate immune remodelli (Front Immunol 2026-09)"
+   ],
+   "info": {
+    "qualified": 57,
+    "rejected": {
+     "older than window": 1
+    },
+    "returned": 58,
+    "searched": 58
+   }
+  },
+  "oxphos-aml": {
+   "events": [
+    "ENTERED 42575085: Beyond BCL-2: What drives venetoclax resistance in acute myeloid leukemia? (Cancer Cell 2026-08)",
+    "ENTERED 42440668: Modulating CAR-T cell exhaustion and fitness in acute myeloid leukemia: mechanistic metabo (Front Immunol 2026-06)"
+   ],
+   "info": {
+    "qualified": 6,
+    "rejected": {},
+    "returned": 6,
+    "searched": 6
+   }
+  }
+ }
+}

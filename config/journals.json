@@ -1,0 +1,16 @@
+{
+  "note": "Curated journal list for the quality gate. Names are PubMed journal abbreviations (NLM title abbreviations). STARTER LIST for Andres to review: add or remove names freely; the next monthly run applies the change. Pinned classics are exempt from this list.",
+  "journals": [
+    "Nat Rev Cancer", "Nat Rev Mol Cell Biol", "Nat Rev Clin Oncol", "Nat Rev Drug Discov", "Nat Rev Immunol",
+    "Nat Cancer", "Nat Med", "Cell", "Cancer Cell", "Cancer Discov", "J Clin Invest", "Mol Cell", "Cell Metab",
+    "Trends Cancer", "Trends Cell Biol", "Trends Mol Med", "Trends Immunol", "Signal Transduct Target Ther",
+    "Cell Death Differ", "Cell Death Dis", "Cell Death Discov", "Autophagy", "Redox Biol", "Free Radic Biol Med",
+    "Oncogene", "Cancer Res", "Clin Cancer Res", "Mol Cancer", "Cancer Lett", "Semin Cancer Biol",
+    "Biochim Biophys Acta Rev Cancer", "Cancer Metastasis Rev", "Cell Mol Life Sci", "Cell Oncol (Dordr)",
+    "J Cell Mol Med", "Br J Pharmacol",
+    "Blood", "Blood Adv", "Blood Cancer Discov", "Blood Cancer J", "Blood Rev", "Leukemia", "Haematologica",
+    "Hemasphere", "J Hematol Oncol", "Exp Hematol Oncol", "Clin Lymphoma Myeloma Leuk", "Leuk Lymphoma",
+    "Br J Haematol", "Am J Hematol",
+    "Int J Mol Sci", "Front Immunol", "Front Oncol", "Heliyon"
+  ]
+}

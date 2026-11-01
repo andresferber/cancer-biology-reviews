@@ -1,0 +1,40 @@
+name: Monthly refresh
+on:
+  schedule:
+    - cron: "41 7 1 * *"   # 1st of each month, about 2:41 am Eastern
+  workflow_dispatch:
+  push:
+    paths:
+      - "config/**"
+      - "template/**"
+      - "scripts/**"
+permissions:
+  contents: write
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Tests
+        run: python3 -m unittest discover -s tests
+      - name: Refresh from PubMed and rebuild the page
+        id: refresh
+        continue-on-error: true
+        run: python3 scripts/refresh.py
+      - name: Save results
+        run: |
+          git config user.name "cbr-refresh"
+          git config user.email "cbr-refresh@users.noreply.github.com"
+          git add data docs
+          git diff --cached --quiet || (git commit -m "Refresh $(date -u +%Y-%m-%d)" && git pull --rebase && git push)
+      - name: Flag a failed run
+        if: steps.refresh.outcome == 'failure'
+        run: |
+          echo "At least one topic could not be refreshed (it was left unchanged). See the Refresh step log."
+          exit 1

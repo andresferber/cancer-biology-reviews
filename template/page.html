@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cancer Biology Reviews</title>
+<style>
+:root{--bg:#f6f5f0;--card:#fffefb;--ink:#22302b;--muted:#5a6a63;--line:#dcd9cf;--accent:#2f5d50;--onaccent:#fff;--heme:#9b2c2c;--solid:#3b5b85;--both:#6a4f8a;--pin:#8a6100;--chip:#ecebe3}
+@media (prefers-color-scheme:dark){:root{--bg:#121917;--card:#1a2320;--ink:#e4ebe7;--muted:#9bb0a6;--line:#2b3833;--accent:#7fc4ad;--onaccent:#0f1a16;--heme:#f08a8a;--solid:#8fb3e3;--both:#c0aef0;--pin:#e8b84a;--chip:#222d29}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--accent)}
+.wrap{max-width:860px;margin:0 auto;padding:4px 16px 40px}
+.band{background:var(--accent);color:var(--onaccent);margin-bottom:16px}
+.bandin{max-width:860px;margin:0 auto;padding:18px 16px 14px}
+.band h1{font-size:22px;margin:0 0 4px;color:var(--onaccent)}
+.band .sub{color:var(--onaccent);opacity:.85;margin:0}
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.filters button{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:5px 11px;border-radius:999px;font-size:13px;cursor:pointer}
+.filters button.on{background:var(--accent);border-color:var(--accent);color:var(--onaccent)}
+.filters .sp{margin-left:auto}
+.plain{background:var(--chip);border-left:3px solid var(--accent);border-radius:0 6px 6px 0;padding:8px 11px;margin:6px 0 8px;font-size:14px}
+.plain b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);margin-bottom:2px}
+details.gloss,details.how{background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:12px}
+details.gloss>summary,details.how>summary{cursor:pointer;padding:10px 14px;font-weight:600;font-size:14px;color:var(--accent)}
+details.gloss dl{margin:0;padding:0 14px 12px;display:grid;grid-template-columns:max-content 1fr;gap:5px 14px;font-size:13.5px}
+details.gloss dt{font-weight:600}
+details.gloss dd{margin:0;color:var(--muted)}
+details.how ol{margin:0;padding:0 14px 12px 34px;font-size:13.5px}
+details.how li{margin:3px 0}
+@media (max-width:560px){details.gloss dl{grid-template-columns:1fr}details.gloss dd{margin-bottom:4px}}
+details.theme{background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:10px}
+details.theme>summary{cursor:pointer;padding:12px 14px;font-weight:600;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:8px}
+details.theme>summary::-webkit-details-marker{display:none}
+details.theme>summary .cnt{font-weight:400;font-size:12px;color:var(--muted)}
+.tbody{padding:0 14px 12px}
+.tblurb{color:var(--muted);font-size:13px;margin:0 0 10px}
+.topic{border-top:1px solid var(--line);padding:12px 0}
+.thead{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.thead h3{margin:0;font-size:15px}
+.tag{font-size:11px;padding:1px 8px;border-radius:999px;border:1px solid currentColor}
+.tag.heme{color:var(--heme)}.tag.solid{color:var(--solid)}.tag.both{color:var(--both)}
+.why{margin:4px 0 8px;font-size:14px}
+.hook{font-size:13px;color:var(--muted);margin:0 0 8px}
+.hook b{color:var(--ink);font-weight:600}
+.rev{padding:8px 10px;border-left:3px solid var(--accent);margin:6px 0;background:var(--bg);border-radius:0 6px 6px 0;overflow-wrap:anywhere;min-width:0}
+.plain,.why,.hook,.tblurb{overflow-wrap:anywhere}
+.rev.pinned{border-left-color:var(--pin)}
+.rev.ret{border-left-color:var(--line);opacity:.92}
+.rh{display:flex;align-items:flex-start;gap:6px}
+.rh .t{font-weight:600;font-size:14px;flex:1}
+.rh .t a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--muted)}
+.star{background:none;border:none;color:var(--pin);font-size:18px;line-height:1;cursor:pointer;padding:0 2px}
+.star:not(.on){color:var(--muted)}
+.rev .m{font-size:12px;color:var(--muted)}
+.rev .g{font-size:13px;margin-top:4px}
+.rev .g p{margin:4px 0}
+.rev .g .con{background:var(--chip);border-radius:6px;padding:5px 8px}
+.rev .g b{color:var(--accent)}
+.rev details.sum summary{cursor:pointer;font-size:12px;color:var(--accent);margin-top:4px}
+.lk{font-size:12px;color:var(--muted);margin-top:4px}
+.badge{font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;margin-right:6px;color:var(--pin);font-weight:700}
+.badge.r{color:var(--accent)}
+.badge.ret{color:var(--muted)}
+.foot{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:6px;font-size:12px;color:var(--muted)}
+.foot button{background:none;border:none;color:var(--accent);cursor:pointer;font-size:12px;padding:0;text-decoration:underline}
+.retlist{margin-top:6px}
+.watch{font-size:12.5px;color:var(--muted);margin-top:8px}
+.watch span{display:inline-block;background:var(--chip);border-radius:999px;padding:1px 9px;margin:2px 4px 0 0}
+.none{font-size:13px;color:var(--muted);margin:6px 0}
+details.dormant{margin-top:10px;border-top:1px dashed var(--line);padding-top:8px}
+details.dormant>summary{cursor:pointer;font-size:13px;color:var(--muted)}
+.savedh{font-size:14px;margin:14px 0 4px}
+.sitedisc{margin:16px 0 0;font-size:12.5px;color:var(--muted)}
+.reportall,.credit{margin:8px 0 0;font-size:12.5px;color:var(--muted)}
+.upd{font-size:12.5px;color:var(--muted);margin:12px 0 0}
+</style>
+</head>
+<body>
+<header class="band"><div class="bandin">
+<h1>Cancer Biology Reviews</h1>
+<p class="sub">Recent review articles on the cellular mechanisms behind cancer, weighted to hematologic malignancies. Updated monthly.</p>
+</div></header>
+<div class="wrap">
+<details class="gloss"><summary>Glossary of terms</summary><dl id="gloss"></dl></details>
+<div class="filters" id="filters"></div>
+<div id="themes"></div>
+<details class="how"><summary>How this page stays uncluttered</summary><ol>
+<li><b>Fixed slots:</b> each topic holds 1 pinned classic plus the 2 most recent qualifying reviews. Nothing else is displayed.</li>
+<li><b>New in, oldest out:</b> when a new review qualifies, the oldest unpinned one retires automatically.</li>
+<li><b>Retired is one line:</b> a count with a Restore link. Anything you have starred stays saved in this browser.</li>
+<li><b>No padding:</b> a topic with fewer good reviews shows fewer.</li>
+<li><b>Quiet topics collapse:</b> a topic with nothing new in 12 months folds into a Dormant row.</li>
+<li><b>Quality gate:</b> PubMed review publication type, a curated journal list, the last 24 months. Pinned classics are the only exception.</li>
+<li><b>Authors' own words:</b> abstracts and conclusions are the authors' text from PubMed; nothing on this page is AI-written.</li>
+</ol></details>
+<p class="upd">Reviews last refreshed __UPDATED__. Source: PubMed.</p>
+<p class="sitedisc"><b>For education only.</b> This site summarizes published research and the author's views. It is not medical advice, a clinical practice guideline or a substitute for professional judgment; treatment decisions should rely on the primary literature, current guidelines, approved prescribing information and the individual patient. This is an independent project, not affiliated with any institution or company.</p>
+<p class="reportall">Comments and suggestions are welcome: <a href="mailto:andresferber@hotmail.com?subject=Cancer%20Biology%20Reviews%3A%20comment">send a comment</a>. Spotted an error or a missing review? Use "Report an error" on any review. Both go to andresferber@hotmail.com.</p>
+<p class="credit">Created by Andres Ferber, MD, with the assistance of Claude (Anthropic).</p>
+</div>
+<noscript><p style="padding:16px">This page needs JavaScript to show the reviews.</p></noscript>
+<script id="cbr-data" type="application/json">__DATA__</script>
+<script>
+(function(){
+'use strict';
+var D=JSON.parse(document.getElementById('cbr-data').textContent);
+var SK='cbrStars_v1';
+var stars=readStars();
+var filter='all',allOpen=null;
+var scopeLabel={heme:'Hematologic',solid:'Solid-tumor fundamental',both:'Heme + solid'};
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function readStars(){try{var m=JSON.parse(localStorage.getItem(SK)||'{}');return m&&typeof m==='object'?m:{}}catch(e){return {}}}
+function writeStars(){try{localStorage.setItem(SK,JSON.stringify(stars))}catch(e){}}
+function rec(p){return D.records[p]}
+function cite(r){var s=(r.authors?r.authors+' · ':'')+r.journal+' '+r.year;if(r.volume){s+=';'+r.volume+(r.pages?':'+r.pages:'')}return s}
+function pm(p){return 'https://pubmed.ncbi.nlm.nih.gov/'+encodeURIComponent(p)+'/'}
+function absHtml(r){
+ var h='';
+ r.abs.forEach(function(s){h+='<p>'+(s.label?'<b>'+esc(s.label)+'.</b> ':'')+esc(s.text)+'</p>'});
+ if(r.con)h+='<p class="con"><b>'+esc(r.con_label)+'.</b> '+esc(r.con)+'</p>';
+ return h;
+}
+function revHtml(p,kind,open,tname){
+ var r=rec(p);if(!r)return '';
+ var cls='rev'+(kind==='pinned'?' pinned':'')+(kind==='retired'?' ret':'');
+ var badge=kind==='pinned'?'<span class="badge">Pinned classic</span>':kind==='retired'?'<span class="badge ret">Retired</span>':'<span class="badge r">Recent</span>';
+ var on=!!stars[p];
+ var star='<button class="star'+(on?' on':'')+'" data-a="star" data-p="'+esc(p)+'" data-n="'+esc(tname)+'" aria-pressed="'+on+'" title="'+(on?'Remove from saved':'Save this review')+'">'+(on?'★':'☆')+'</button>';
+ var mail='mailto:andresferber@hotmail.com?subject='+encodeURIComponent('Cancer Biology Reviews: '+r.title.slice(0,80));
+ var lk='<a href="'+pm(p)+'" target="_blank" rel="noopener">PubMed</a>'+(r.doi?' · <a href="https://doi.org/'+esc(r.doi)+'" target="_blank" rel="noopener">Full text</a>':'')+' · <a href="'+mail+'">Report an error</a>';
+ var body=(r.abs.length||r.con)?'<details class="sum"'+(open?' open':'')+'><summary>'+(r.abs.length?'Abstract and conclusion':'Abstract')+'</summary><div class="g">'+absHtml(r)+'</div></details>':'';
+ return '<div class="'+cls+'"><div class="rh">'+badge+'<span class="t"><a href="'+pm(p)+'" target="_blank" rel="noopener">'+esc(r.title)+'</a></span>'+star+'</div><div class="m">'+esc(cite(r))+'</div>'+body+'<div class="lk">'+lk+'</div></div>';
+}
+function topicHtml(t,first){
+ var open=allOpen===null?first:allOpen;
+ var n=t.pinned.length+t.recent.length;
+ var h='<div class="topic" id="t-'+esc(t.id)+'"><div class="thead"><h3>'+esc(t.name)+'</h3><span class="tag '+esc(t.scope)+'">'+scopeLabel[t.scope]+'</span></div>';
+ h+='<div class="plain"><b>Mechanism in brief</b>'+esc(t.plain)+'</div>';
+ h+='<p class="why"><b>Why it matters:</b> '+esc(t.why)+'</p><p class="hook"><b>Clinical hook'+(t.hook_draft?' (draft)':'')+':</b> '+esc(t.hook)+'</p>';
+ t.pinned.forEach(function(p){h+=revHtml(p,'pinned',open,t.name)});
+ t.recent.forEach(function(p){h+=revHtml(p,'recent',open,t.name)});
+ if(!n)h+='<p class="none">No qualifying reviews yet.</p>';
+ h+='<div class="foot"><span>'+n+' of '+D.slots+' slots used</span>';
+ if(t.retired.length)h+='<span>Retired: '+t.retired.length+' <button data-a="ret" data-t="'+esc(t.id)+'">Restore</button></span>';
+ h+='</div>';
+ if(t.retired.length){h+='<div class="retlist" id="ret-'+esc(t.id)+'" hidden>';t.retired.forEach(function(p){h+=revHtml(p,'retired',false,t.name)});h+='</div>'}
+ h+='<div class="watch">To watch: '+t.watch.map(function(w){return '<span>'+esc(w)+'</span>'}).join('')+'</div></div>';
+ return h;
+}
+function inFilter(t){return filter==='all'||(filter==='heme'&&(t.scope==='heme'||t.scope==='both'))||(filter==='solid'&&(t.scope==='solid'||t.scope==='both'))}
+function savedHtml(){
+ var keys=Object.keys(stars);
+ if(!keys.length)return '<p class="none">Nothing saved yet. Use the star on any review; saved reviews stay here even after they retire from a topic. Saves are kept in this browser only.</p>';
+ var groups={};
+ keys.sort(function(a,b){return (stars[b].ts||0)-(stars[a].ts||0)}).forEach(function(p){var n=stars[p].n||'Saved';(groups[n]=groups[n]||[]).push(p)});
+ var h='';
+ Object.keys(groups).forEach(function(n){
+  h+='<h3 class="savedh">'+esc(n)+'</h3>';
+  groups[n].forEach(function(p){
+   if(rec(p)){h+=revHtml(p,'recent',false,n).replace('<span class="badge r">Recent</span>','<span class="badge r">Saved</span>')}
+   else{var s=stars[p];h+='<div class="rev"><div class="rh"><span class="badge r">Saved</span><span class="t"><a href="'+pm(p)+'" target="_blank" rel="noopener">'+esc(s.t||('PubMed '+p))+'</a></span><button class="star on" data-a="star" data-p="'+esc(p)+'" data-n="'+esc(n)+'" aria-pressed="true">★</button></div><div class="m">'+esc(s.m||'')+'</div></div>'}
+  });
+ });
+ return h;
+}
+function render(){
+ var out='';
+ if(filter==='saved'){document.getElementById('themes').innerHTML=savedHtml();return}
+ D.themes.forEach(function(th){
+  var vis=th.topics.filter(inFilter);if(!vis.length)return;
+  var live=vis.filter(function(t){return !t.dormant}),dorm=vis.filter(function(t){return t.dormant});
+  out+='<details class="theme" open><summary><span>'+esc(th.name)+'</span><span class="cnt">'+vis.length+' topics</span></summary><div class="tbody"><p class="tblurb">'+esc(th.blurb)+'</p>';
+  live.forEach(function(t,i){out+=topicHtml(t,i===0)});
+  if(dorm.length){
+   out+='<details class="dormant"><summary>Dormant ('+dorm.length+'): nothing new in 12 months</summary>';
+   dorm.forEach(function(t){out+=topicHtml(t,false)});
+   out+='</details>';
+  }
+  out+='</div></details>';
+ });
+ document.getElementById('themes').innerHTML=out||'<p class="none">No topics match this filter.</p>';
+}
+function drawFilters(){
+ var fl=[['all','All'],['heme','Hematologic'],['solid','Solid-tumor fundamentals'],['saved','★ Saved ('+Object.keys(stars).length+')']];
+ var h='';fl.forEach(function(f){h+='<button data-f="'+f[0]+'" class="'+(f[0]===filter?'on':'')+'">'+f[1]+'</button>'});
+ h+='<button class="sp" id="sumtoggle">'+(allOpen===true?'Collapse abstracts':'Expand abstracts')+'</button>';
+ document.getElementById('filters').innerHTML=h;
+}
+document.getElementById('filters').addEventListener('click',function(e){
+ var b=e.target.closest('button');if(!b)return;
+ if(b.id==='sumtoggle'){
+  allOpen=allOpen!==true;
+  Array.prototype.forEach.call(document.querySelectorAll('details.sum'),function(d){d.open=allOpen});
+  b.textContent=allOpen?'Collapse abstracts':'Expand abstracts';
+  return;
+ }
+ if(b.getAttribute('data-f')){filter=b.getAttribute('data-f');drawFilters();render()}
+});
+document.getElementById('themes').addEventListener('click',function(e){
+ var b=e.target.closest('button[data-a]');if(!b)return;
+ var a=b.getAttribute('data-a');
+ if(a==='ret'){
+  var box=document.getElementById('ret-'+b.getAttribute('data-t'));
+  if(box){box.hidden=!box.hidden;b.textContent=box.hidden?'Restore':'Hide'}
+ }else if(a==='star'){
+  var p=b.getAttribute('data-p'),r=rec(p);
+  if(stars[p]){delete stars[p]}
+  else{stars[p]={t:r?r.title:'',m:r?cite(r):'',n:b.getAttribute('data-n'),ts:Date.now()}}
+  writeStars();
+  var on=!!stars[p];
+  Array.prototype.forEach.call(document.querySelectorAll('button.star[data-p="'+p+'"]'),function(x){
+   x.classList.toggle('on',on);x.setAttribute('aria-pressed',on);x.textContent=on?'★':'☆';x.title=on?'Remove from saved':'Save this review'});
+  var sb=document.querySelector('#filters button[data-f="saved"]');
+  if(sb)sb.textContent='★ Saved ('+Object.keys(stars).length+')';
+ }
+ tell();
+});
+document.getElementById('gloss').innerHTML=D.glossary.map(function(g){return '<dt>'+esc(g.term)+'</dt><dd>'+esc(g.def)+'</dd>'}).join('');
+function tell(){try{parent.postMessage({cbrHeight:Math.ceil(document.documentElement.getBoundingClientRect().height)},'*')}catch(e){}}
+drawFilters();render();tell();
+if(window.ResizeObserver){new ResizeObserver(tell).observe(document.body)}
+else{window.addEventListener('resize',tell)}
+})();
+</script>
+</body>
+</html>

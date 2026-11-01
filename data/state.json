@@ -1,0 +1,106 @@
+{
+ "topics": {
+  "autophagy": {
+   "active": [
+    "42922083",
+    "42921971"
+   ],
+   "pinned": [
+    "36864290"
+   ],
+   "pinned_spec": [
+    {
+     "author": "Debnath",
+     "doi": "10.1038/s41580-023-00585-z",
+     "year": "2023"
+    }
+   ],
+   "retired": []
+  },
+  "bm-niche-camdr": {
+   "active": [
+    "41816334",
+    "41178643"
+   ],
+   "pinned": [
+    "37258706"
+   ],
+   "pinned_spec": [
+    {
+     "author": "Ogana",
+     "title": "Targeting integrins in drug-resistant acute myeloid leukaemia",
+     "year": "2024"
+    }
+   ],
+   "retired": []
+  },
+  "caf-ecm": {
+   "active": [
+    "42957652",
+    "42948317"
+   ],
+   "pinned": [
+    "35883004"
+   ],
+   "pinned_spec": [
+    {
+     "author": "Lavie",
+     "doi": "10.1038/s43018-022-00411-z",
+     "year": "2022"
+    }
+   ],
+   "retired": []
+  },
+  "ferroptosis": {
+   "active": [
+    "42942016",
+    "42953155"
+   ],
+   "pinned": [
+    "35338310"
+   ],
+   "pinned_spec": [
+    {
+     "author": "Lei",
+     "doi": "10.1038/s41568-022-00459-0",
+     "year": "2022"
+    }
+   ],
+   "retired": []
+  },
+  "mito-redox": {
+   "active": [
+    "42909308",
+    "42761405"
+   ],
+   "pinned": [
+    "30168803"
+   ],
+   "pinned_spec": [
+    {
+     "author": "Zhu",
+     "doi": "10.1172/JCI120844",
+     "year": "2018"
+    }
+   ],
+   "retired": []
+  },
+  "oxphos-aml": {
+   "active": [
+    "42575085",
+    "42440668"
+   ],
+   "pinned": [
+    "34561557"
+   ],
+   "pinned_spec": [
+    {
+     "author": "de Beauchamp",
+     "doi": "10.1038/s41375-021-01416-w",
+     "year": "2022"
+    }
+   ],
+   "retired": []
+  }
+ }
+}

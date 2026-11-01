@@ -1,0 +1,215 @@
+{
+  "settings": {
+    "slots_pinned": 1,
+    "slots_recent": 2,
+    "window_months": 24,
+    "dormant_months": 12,
+    "max_results": 1000
+  },
+  "glossary": [
+    {
+      "term": "Apoptosis",
+      "def": "Regulated, caspase-dependent cell death; the principal mechanism of cytotoxic and many targeted therapies, and a frequent site of resistance."
+    },
+    {
+      "term": "BCL-2 family",
+      "def": "Pro- and anti-apoptotic regulators of mitochondrial outer membrane permeabilization. Venetoclax inhibits BCL-2."
+    },
+    {
+      "term": "Mitochondria",
+      "def": "Site of oxidative metabolism and of the commitment step of intrinsic apoptosis."
+    },
+    {
+      "term": "OXPHOS",
+      "def": "Oxidative phosphorylation: electron transport coupled to ATP synthesis."
+    },
+    {
+      "term": "ROS",
+      "def": "Reactive oxygen species. Signaling molecules at low levels, damaging at high levels."
+    },
+    {
+      "term": "Ferroptosis",
+      "def": "Iron-dependent regulated cell death caused by membrane lipid peroxidation."
+    },
+    {
+      "term": "Autophagy",
+      "def": "Lysosomal degradation and recycling of cytoplasmic components."
+    },
+    {
+      "term": "Integrin",
+      "def": "Heterodimeric adhesion receptors that bind extracellular matrix and counter-receptors and transduce survival signals."
+    },
+    {
+      "term": "Extracellular matrix",
+      "def": "The non-cellular scaffold of collagens, fibronectin, proteoglycans and glycosaminoglycans."
+    },
+    {
+      "term": "Fibroblast / CAF",
+      "def": "Stromal cells that tumors activate to remodel matrix and signal to tumor and immune cells."
+    },
+    {
+      "term": "Niche",
+      "def": "The local microenvironment of cells and factors that regulates a cell's survival and fate, such as the bone marrow niche."
+    }
+  ],
+  "themes": [
+    {
+      "id": "met",
+      "name": "Metabolism and redox",
+      "blurb": "How tumor cells get and use energy, and how they handle the oxidative stress that comes with it.",
+      "topics": [
+        {
+          "id": "oxphos-aml",
+          "name": "Mitochondrial metabolism and OXPHOS in myeloid leukemia",
+          "scope": "heme",
+          "plain": "Oxidative phosphorylation (OXPHOS) couples electron transport through the mitochondrial respiratory chain to ATP synthesis. Leukemia stem cells and chemoresistant clones often depend on it rather than on glycolysis, and venetoclax acts at the mitochondrion, suppressing respiration and promoting apoptosis.",
+          "why": "Helps explain both the response to venetoclax-based regimens and several routes to relapse on them.",
+          "hook": "BCL-2 inhibition in AML, CLL and MCL; resistance mechanisms.",
+          "hook_draft": true,
+          "watch": [
+            "Mitochondrial transfer from stroma",
+            "Fatty-acid oxidation",
+            "Mitophagy"
+          ],
+          "query": "(leukemia[ti] OR leukaemia[ti] OR \"acute myeloid\"[ti] OR AML[ti] OR myeloid[ti]) AND (OXPHOS[tiab] OR \"oxidative phosphorylation\"[tiab] OR \"mitochondrial metabolism\"[tiab] OR \"mitochondrial respiration\"[tiab] OR \"mitochondrial function\"[tiab] OR (\"mitochondrial\"[tiab] AND venetoclax[tiab]))",
+          "pinned": [
+            {
+              "doi": "10.1038/s41375-021-01416-w",
+              "author": "de Beauchamp",
+              "year": "2022"
+            }
+          ],
+          "exclude_pmids": []
+        },
+        {
+          "id": "mito-redox",
+          "name": "Mitochondrial redox signaling",
+          "scope": "both",
+          "plain": "Mitochondrial respiration generates reactive oxygen species (ROS) as a byproduct. At low levels ROS act as signaling molecules that promote proliferation and survival; at high levels they cause oxidative damage and cell death. Tumor cells sustain elevated ROS signaling while upregulating antioxidant systems, such as glutathione and thioredoxin, to stay below the lethal threshold.",
+          "why": "A core concept behind the selective toxicity of some drugs to tumor cells, and behind how tumors adapt to oxidative stress.",
+          "hook": "Background for IDH inhibitors, oxidative-stress-based drugs and resistance.",
+          "hook_draft": true,
+          "watch": [
+            "NAD+ metabolism",
+            "Mitochondrial calcium",
+            "mtDNA heteroplasmy"
+          ],
+          "query": "mitochond*[ti] AND (redox[tiab] OR \"reactive oxygen\"[tiab] OR ROS[tiab]) AND (cancer[tiab] OR tumor[tiab] OR tumour[tiab] OR neoplasm*[tiab] OR leukemia[tiab] OR leukaemia[tiab] OR lymphoma[tiab] OR myeloma[tiab])",
+          "pinned": [
+            {
+              "doi": "10.1172/JCI120844",
+              "author": "Zhu",
+              "year": "2018"
+            }
+          ],
+          "exclude_pmids": []
+        }
+      ]
+    },
+    {
+      "id": "death",
+      "name": "Cell death and survival",
+      "blurb": "The different ways cells die, and how cancer cells avoid dying.",
+      "topics": [
+        {
+          "id": "ferroptosis",
+          "name": "Ferroptosis",
+          "scope": "both",
+          "plain": "Ferroptosis is a regulated, non-apoptotic form of cell death driven by iron-dependent peroxidation of polyunsaturated phospholipids in cellular membranes. It is restrained chiefly by the selenoenzyme GPX4 and by cystine import through system xc-. Cells that resist apoptosis can remain sensitive to it.",
+          "why": "Cancers that have learned to resist apoptosis may still be vulnerable to ferroptosis, and blood cancers may be especially susceptible. Mostly early-stage research so far.",
+          "hook": "Possible route around apoptosis resistance in leukemia, lymphoma and myeloma.",
+          "hook_draft": true,
+          "watch": [
+            "Disulfidptosis",
+            "Cuproptosis",
+            "Lipid remodeling (LPCAT1)"
+          ],
+          "query": "ferroptosis[ti] AND (cancer[tiab] OR tumor[tiab] OR tumour[tiab] OR neoplasm*[tiab] OR leukemia[tiab] OR leukaemia[tiab] OR lymphoma[tiab] OR myeloma[tiab] OR hematolog*[tiab] OR haematolog*[tiab])",
+          "pinned": [
+            {
+              "doi": "10.1038/s41568-022-00459-0",
+              "author": "Lei",
+              "year": "2022"
+            }
+          ],
+          "exclude_pmids": []
+        },
+        {
+          "id": "autophagy",
+          "name": "Autophagy",
+          "scope": "both",
+          "plain": "Autophagy delivers cytoplasmic components, including damaged organelles, in double-membrane autophagosomes to the lysosome for degradation and recycling of substrates. It maintains homeostasis and supports survival under nutrient or metabolic stress; its effect on tumors depends on stage and context.",
+          "why": "It can restrain tumor initiation by clearing damage, yet support established tumors under stress and treatment, which is why drugs targeting it have been hard to develop.",
+          "hook": "Rationale and limits of autophagy inhibition combined with other agents.",
+          "hook_draft": true,
+          "watch": [
+            "Mitophagy",
+            "Autophagy-related pathways (LC3-associated)"
+          ],
+          "query": "(autophagy[ti] OR mitophagy[ti]) AND (cancer[tiab] OR tumor[tiab] OR tumour[tiab] OR neoplasm*[tiab] OR leukemia[tiab] OR leukaemia[tiab] OR lymphoma[tiab] OR myeloma[tiab])",
+          "pinned": [
+            {
+              "doi": "10.1038/s41580-023-00585-z",
+              "author": "Debnath",
+              "year": "2023"
+            }
+          ],
+          "exclude_pmids": []
+        }
+      ]
+    },
+    {
+      "id": "tme",
+      "name": "Microenvironment and adhesion",
+      "blurb": "How the surrounding tissue, and physical contact with it, protects tumor cells.",
+      "topics": [
+        {
+          "id": "bm-niche-camdr",
+          "name": "Bone marrow niche and cell adhesion-mediated drug resistance",
+          "scope": "heme",
+          "plain": "In myeloma and AML, integrin-mediated adhesion to stromal cells and extracellular matrix in the bone marrow activates pro-survival signaling and confers resistance to cytotoxic and targeted agents (cell adhesion-mediated drug resistance, CAM-DR). With soluble stromal factors, it forms an environment-mediated resistance that can be present before any drug exposure.",
+          "why": "Helps explain relapse that does not depend on new mutations, and why the niche can blunt newer immunotherapies such as CAR-T and bispecific antibodies.",
+          "hook": "Myeloma CAR-T and bispecific resistance; integrin targeting in AML.",
+          "hook_draft": true,
+          "watch": [
+            "Extracellular vesicles",
+            "Niche remodeling after CAR-T",
+            "Mesenchymal stromal cell crosstalk"
+          ],
+          "query": "(\"bone marrow microenvironment\"[ti] OR \"bone marrow niche\"[ti] OR \"marrow niche\"[ti] OR \"marrow microenvironment\"[ti] OR \"bone marrow stromal\"[ti] OR \"adhesion-mediated\"[ti] OR \"CAM-DR\"[tiab]) AND (leukemia[tiab] OR leukaemia[tiab] OR myeloma[tiab] OR lymphoma[tiab] OR \"acute myeloid\"[tiab] OR AML[tiab] OR myelodysplastic[tiab])",
+          "pinned": [
+            {
+              "title": "Targeting integrins in drug-resistant acute myeloid leukaemia",
+              "author": "Ogana",
+              "year": "2024"
+            }
+          ],
+          "exclude_pmids": []
+        },
+        {
+          "id": "caf-ecm",
+          "name": "Cancer-associated fibroblasts and extracellular matrix",
+          "scope": "solid",
+          "plain": "Cancer-associated fibroblasts (CAFs) are activated stromal cells that remodel the extracellular matrix, secrete cytokines, growth factors and exosomes, and shape immune cell infiltration. They are heterogeneous (for example myofibroblastic and inflammatory subtypes) and are linked to immune exclusion and therapy resistance.",
+          "why": "A well-studied solid-tumor concept now being tested in blood cancers, and relevant to why some tumors resist immunotherapy.",
+          "hook": "Stromal targets and immunotherapy resistance; solid-tumor insight with marrow crossover.",
+          "hook_draft": true,
+          "watch": [
+            "Spatial transcriptomics of stroma",
+            "Integrin and cadherin signaling",
+            "Tumor-nerve interactions"
+          ],
+          "query": "(\"cancer-associated fibroblast*\"[ti] OR \"cancer associated fibroblast*\"[ti] OR CAF[ti] OR CAFs[ti] OR \"tumor stroma\"[ti] OR \"tumour stroma\"[ti] OR \"extracellular matrix\"[ti]) AND (cancer[tiab] OR tumor[tiab] OR tumour[tiab])",
+          "pinned": [
+            {
+              "doi": "10.1038/s43018-022-00411-z",
+              "author": "Lavie",
+              "year": "2022"
+            }
+          ],
+          "exclude_pmids": []
+        }
+      ]
+    }
+  ]
+}
