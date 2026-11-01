@@ -3,10 +3,7 @@
  "errors": {},
  "topics": {
   "apoptosis-bcl2": {
-   "events": [
-    "ENTERED 42575085: Beyond BCL-2: What drives venetoclax resistance in acute myeloid leukemia? (Cancer Cell 2026-08)",
-    "RETIRED 41714805: What does BCL-2 do? From new molecular insights to the clinical implications (Cell Death Differ 2026-02) - displaced by a newer review"
-   ],
+   "events": [],
    "info": {
     "qualified": 21,
     "rejected": {
