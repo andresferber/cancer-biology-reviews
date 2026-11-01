@@ -112,6 +112,33 @@
       "blurb": "The different ways cells die, and how cancer cells avoid dying.",
       "topics": [
         {
+          "id": "apoptosis-bcl2",
+          "name": "Apoptosis and the BCL-2 family",
+          "scope": "both",
+          "plain": "Intrinsic apoptosis is decided at the mitochondrion by the BCL-2 family. Pro-survival proteins (BCL-2, BCL-XL, MCL-1) restrain the pore-forming effectors BAX and BAK; stress-activated BH3-only proteins such as BIM neutralize the pro-survival proteins and can activate the effectors directly, leading to mitochondrial outer membrane permeabilization, cytochrome c release and caspase activation. Many tumor cells stay alive only because they depend on one or more pro-survival proteins.",
+          "why": "The biology behind BH3-mimetic drugs such as venetoclax, and behind resistance to them, for example a shift in dependence from BCL-2 to MCL-1 or BCL-XL.",
+          "hook": "Why some cancers respond to BCL-2 inhibition and others do not; MCL-1 and BCL-XL as escape routes.",
+          "hook_draft": true,
+          "watch": [
+            "MCL-1 inhibitors",
+            "Mitochondrial priming (BH3 profiling)",
+            "Mitochondrial dynamics and cristae remodeling"
+          ],
+          "query": "(\"BCL-2\"[ti] OR BCL2[ti] OR \"BCL-2 family\"[ti] OR \"BH3\"[ti] OR \"BH3-mimetic*\"[ti] OR \"MCL-1\"[ti] OR MCL1[ti] OR \"BCL-XL\"[ti] OR \"intrinsic apoptosis\"[ti] OR \"mitochondrial apoptosis\"[ti] OR \"apoptotic priming\"[ti]) AND (cancer[tiab] OR tumor[tiab] OR tumour[tiab] OR neoplasm*[tiab] OR leukemia[tiab] OR leukaemia[tiab] OR lymphoma[tiab] OR myeloma[tiab])",
+          "pinned": [
+            {
+              "doi": "10.1038/s41568-021-00407-4",
+              "author": "Diepstraten",
+              "year": "2022"
+            }
+          ],
+          "exclude_pmids": [
+            "42218143",
+            "42137149",
+            "42575085"
+          ]
+        },
+        {
           "id": "ferroptosis",
           "name": "Ferroptosis",
           "scope": "both",
