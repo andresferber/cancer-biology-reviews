@@ -47,7 +47,7 @@ def payload(root, today):
             })
         themes.append({"id": th["id"], "name": th["name"], "blurb": th["blurb"], "topics": topics})
     return {"updated": today.isoformat(), "slots": s["slots_pinned"] + s["slots_recent"],
-            "glossary": cfg["glossary"], "themes": themes, "records": out_recs}
+            "notice": cfg.get("notice", ""), "glossary": cfg["glossary"], "themes": themes, "records": out_recs}
 
 
 def build(root, today=None):
