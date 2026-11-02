@@ -1,5 +1,5 @@
 {
- "date": "2026-11-01",
+ "date": "2026-11-02",
  "errors": {},
  "topics": {
   "apoptosis-bcl2": {
@@ -16,13 +16,13 @@
   "autophagy": {
    "events": [],
    "info": {
-    "qualified": 76,
+    "qualified": 75,
     "rejected": {
      "not a review": 1,
-     "older than window": 4
+     "older than window": 3
     },
-    "returned": 81,
-    "searched": 81
+    "returned": 79,
+    "searched": 79
    }
   },
   "bm-niche-camdr": {
@@ -37,12 +37,10 @@
   "caf-ecm": {
    "events": [],
    "info": {
-    "qualified": 89,
-    "rejected": {
-     "older than window": 3
-    },
-    "returned": 92,
-    "searched": 92
+    "qualified": 87,
+    "rejected": {},
+    "returned": 87,
+    "searched": 87
    }
   },
   "ferroptosis": {
@@ -50,30 +48,28 @@
    "info": {
     "qualified": 145,
     "rejected": {
-     "older than window": 5
+     "older than window": 2
     },
-    "returned": 150,
-    "searched": 150
+    "returned": 147,
+    "searched": 147
    }
   },
   "mito-redox": {
    "events": [],
    "info": {
     "qualified": 57,
-    "rejected": {
-     "older than window": 1
-    },
-    "returned": 58,
-    "searched": 58
+    "rejected": {},
+    "returned": 57,
+    "searched": 57
    }
   },
   "oxphos-aml": {
    "events": [],
    "info": {
-    "qualified": 6,
+    "qualified": 5,
     "rejected": {},
-    "returned": 6,
-    "searched": 6
+    "returned": 5,
+    "searched": 5
    }
   }
  }
