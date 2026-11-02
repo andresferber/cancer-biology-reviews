@@ -43,6 +43,8 @@ details.topic>summary::-webkit-details-marker{display:none}
 details.topic>summary .tn{font-weight:600;font-size:16px;flex:1 1 220px;min-width:0;overflow-wrap:anywhere}
 details.topic>summary .tc{font-size:12px;color:var(--muted);white-space:nowrap}
 .tin{padding:10px 12px 12px}
+.abar{display:flex;justify-content:flex-end;margin:2px 0 4px}
+.abar button{background:var(--card);border:1px solid var(--line);color:var(--accent);border-radius:999px;font-size:12px;padding:3px 11px;cursor:pointer}
 .tag{font-size:11px;padding:1px 8px;border-radius:999px;border:1px solid currentColor}
 .tag.heme{color:var(--heme)}.tag.solid{color:var(--solid)}.tag.both{color:var(--both)}
 .why{margin:4px 0 8px;font-size:14px}
@@ -145,6 +147,8 @@ function topicHtml(t){
  var h='<details class="topic" id="t-'+esc(t.id)+'"'+(open?' open':'')+'><summary><span class="tn sn">'+esc(t.name)+'</span><span class="tag '+esc(t.scope)+'">'+scopeLabel[t.scope]+'</span><span class="tc">'+n+(n===1?' review':' reviews')+'</span></summary><div class="tin">';
  h+='<div class="plain"><b>Mechanism in brief</b>'+esc(t.plain)+'</div>';
  h+='<p class="why"><b>Why it matters:</b> '+esc(t.why)+'</p><p class="hook"><b>Clinical hook'+(t.hook_draft?' (draft)':'')+':</b> '+esc(t.hook)+'</p>';
+ var hasAbs=t.pinned.concat(t.recent).some(function(p){var r=rec(p);return r&&(r.abs.length||r.con)});
+ if(hasAbs)h+='<div class="abar"><button data-a="abs">'+(open?'Collapse abstracts':'Expand abstracts')+'</button></div>';
  t.pinned.forEach(function(p){h+=revHtml(p,'pinned',open,t.name)});
  t.recent.forEach(function(p){h+=revHtml(p,'recent',open,t.name)});
  if(!n)h+='<p class="none">No qualifying reviews yet.</p>';
@@ -207,7 +211,13 @@ document.getElementById('filters').addEventListener('click',function(e){
 document.getElementById('themes').addEventListener('click',function(e){
  var b=e.target.closest('button[data-a]');if(!b)return;
  var a=b.getAttribute('data-a');
- if(a==='ret'){
+ if(a==='abs'){
+  var tp=b.closest('details.topic');if(!tp)return;
+  var sums=tp.querySelectorAll('details.sum');
+  var anyClosed=Array.prototype.some.call(sums,function(d){return !d.open});
+  Array.prototype.forEach.call(sums,function(d){d.open=anyClosed});
+  b.textContent=anyClosed?'Collapse abstracts':'Expand abstracts';
+ }else if(a==='ret'){
   var box=document.getElementById('ret-'+b.getAttribute('data-t'));
   if(box){box.hidden=!box.hidden;b.textContent=box.hidden?'Restore':'Hide'}
  }else if(a==='star'){
@@ -223,6 +233,13 @@ document.getElementById('themes').addEventListener('click',function(e){
  }
  tell();
 });
+document.getElementById('themes').addEventListener('toggle',function(e){
+ var d=e.target;if(!d||!d.classList||!d.classList.contains('sum'))return;
+ var tp=d.closest('details.topic');if(!tp)return;
+ var btn=tp.querySelector('button[data-a="abs"]');if(!btn)return;
+ var anyClosed=Array.prototype.some.call(tp.querySelectorAll('details.sum'),function(x){return !x.open});
+ btn.textContent=anyClosed?'Expand abstracts':'Collapse abstracts';
+},true);
 (function(){var n=document.getElementById('notice');if(D.notice){n.textContent=D.notice;n.hidden=false}})();
 document.getElementById('gloss').innerHTML=D.glossary.map(function(g){return '<dt>'+esc(g.term)+'</dt><dd>'+esc(g.def)+'</dd>'}).join('');
 function tell(){try{parent.postMessage({cbrHeight:Math.ceil(document.documentElement.getBoundingClientRect().height)},'*')}catch(e){}}
